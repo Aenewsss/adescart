@@ -123,12 +123,16 @@ a {
 
 .btn-main {
   background-color: var(--main-color) !important;
-  width: 400px;
+  width: clamp(200px, 90%, 400px);
 }
 
 .btn-green {
   background-color: var(--green) !important;
-  width: 400px;
+  width: clamp(200px, 90%, 400px);
+}
+
+.w-400 {
+  width: clamp(200px, 90%, 400px);
 }
 
 .scale {
@@ -192,19 +196,17 @@ a {
   transform: scale(0.9);
 }
 
-.w-400 {
-  width: 400px;
-}
+
 
 .navbar-toggler:focus {
   text-decoration: none;
   outline: 0;
   box-shadow: none !important;
-  filter: drop-shadow(0 0 4px rgba(255,255,255, 0.5));
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.5));
   transform: scale(1.1);
 }
 
-.w-md-50{
+.w-md-50 {
   width: 50%;
 }
 
@@ -216,5 +218,9 @@ a {
 
   .w-md-50 {
     width: 100% !important;
+  }
+
+  .fs-4 span {
+    font-size: 18px !important;
   }
 }

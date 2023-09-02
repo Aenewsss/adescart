@@ -10,12 +10,12 @@ const Footer = () => {
             </div>
 
             <div className="bg-black p-4">
-                <div className="row d-flex justify-content-center">
+                <div className="row d-flex justify-content-center gap-md-0 gap-3">
                     <div className="col-md-4 d-flex align-items-center justify-content-center">
                         <Image width={180} height={42} src="/images/logo-transparente.svg" alt="transparente.svg" />
                     </div>
                     <div className="col-md-4 d-flex flex-column align-items-center ">
-                        <h6 className="text-main-color fw-bold">A DESCART</h6>
+                        <h6 className="text-main-color fw-bold mb-0 d-md-flex d-none">A DESCART</h6>
                         <div className="d-flex align-items-center gap-2 mt-3">
                             <Image width={20} height={20} src="/icons/house.svg" alt="transparente.svg" />
                             <div className="text-white">
@@ -30,8 +30,8 @@ const Footer = () => {
                     </div>
                     <div className="col-md-4 d-flex d-flex align-items-center justify-content-center">
                         <div className="text-white ">
-                            <h6 className="text-main-color fw-bold">REDES SOCIAIS</h6>
-                            <div className="d-flex flex-column gap-2  mt-3">
+                            <h6 className="text-main-color fw-bold mb-0">REDES SOCIAIS</h6>
+                            <div className="d-flex flex-column gap-2 mt-3">
 
                                 <div className="d-flex gap-2">
                                     <Image width={20} height={20} src="/icons/mail.svg" alt="transparente.svg" />

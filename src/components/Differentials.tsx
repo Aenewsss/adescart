@@ -7,7 +7,7 @@ const Differentials = () => {
 
             <div className="d-flex justify-content-between flex-wrap">
                 <div className="d-flex justify-content-center mt-5 z-1 w-md-50">
-                    <div className="d-flex flex-column align-items-start gap-4">
+                    <div className="d-flex flex-column align-items-start gap-4 p-md-0 p-1">
 
                         <h2 className="section-heading after-none display-4 text-start ff-poppins-medium d-block">Por que escolher <br />A Descart?</h2>
 

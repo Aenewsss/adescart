@@ -9,7 +9,7 @@ const HomeTop = () => {
                     atendimento com o melhor preço.</h1>
             </div>
             <div className="bg-main-color w-100 p-2">
-                <div className="container d-flex justify-content-center text-white gap-5 fs-5">
+                <div className="container d-flex flex-wrap justify-content-sm-center text-white gap-5 fs-5">
                     <div className="d-flex align-items-center gap-2 fst-italic">
                         <Image width={40} height={40} src="/icons/chat-message.svg" alt="Ícone mensagem" />
                         <p className="mb-0">Atendimento <span className="fw-bold">rápido</span></p>

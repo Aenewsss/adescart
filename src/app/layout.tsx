@@ -4,7 +4,8 @@ import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 import Footer from "@components/components/Footer"
 
-const inter = Poppins({ subsets: ['latin'], weight: '200' })
+const poppinsThin = Poppins({ subsets: ['latin'], weight: '200' })
+const poppinsMedium = Poppins({ subsets: ['latin'], weight: '300', variable: '--font-poppins-medium' })
 
 export const metadata: Metadata = {
   title: 'A Descart',
@@ -29,7 +30,7 @@ export default function RootLayout({
         <script crossOrigin="anonymous" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" />
       </head>
 
-      <body className={inter.className}>
+      <body className={`${poppinsThin.className} ${poppinsMedium.variable}`}>
         <Navbar />
         {children}
         <Footer/>

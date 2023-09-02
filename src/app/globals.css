@@ -138,3 +138,26 @@ a {
 .scale:hover {
   transform: scale(1.1) !important;
 }
+
+.ff-poppins-medium{
+  font-family: var(--font-poppins-medium);
+}
+
+.w-60 {
+  width: 60% !important;
+}
+
+.mt-m5{
+  margin-top: -10vh;
+}
+
+.differentials-bg-whats{
+  min-height: 440px;
+  background: center / cover no-repeat url('/images/background-diferenciais-whatsapp.png');
+}
+
+.after-none::after {
+  display: none;
+}
+
+.mb-n10 {margin-bottom: -10px;}

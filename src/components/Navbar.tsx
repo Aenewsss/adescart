@@ -22,7 +22,7 @@ const Navbar = () => {
     }
 
     return (
-        <nav id="sidebar" style={{ backgroundColor }} className="zIndex-1 navbar navbar-expand-lg position-fixed w-100 m-0 p-0">
+        <nav id="sidebar" style={{ backgroundColor }} className="z-2 navbar navbar-expand-lg position-fixed w-100 m-0 p-0">
             <div className="container-fluid d-flex justify-content-around pb-3 pt-1 gap-3">
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <Image width={40} height={40} src="/icons/menu.svg" alt="Ícone Menu" />

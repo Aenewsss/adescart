@@ -139,7 +139,7 @@ a {
   transform: scale(1.1) !important;
 }
 
-.ff-poppins-medium{
+.ff-poppins-medium {
   font-family: var(--font-poppins-medium);
 }
 
@@ -147,11 +147,11 @@ a {
   width: 60% !important;
 }
 
-.mt-m5{
+.mt-m5 {
   margin-top: -10vh;
 }
 
-.differentials-bg-whats{
+.differentials-bg-whats {
   min-height: 440px;
   background: center / cover no-repeat url('/images/background-diferenciais-whatsapp.png');
 }
@@ -160,4 +160,61 @@ a {
   display: none;
 }
 
-.mb-n10 {margin-bottom: -10px;}
+.mb-n10 {
+  margin-bottom: -10px;
+}
+
+.flip-vertical {
+  transform: rotateX(180deg);
+}
+
+.border-green {
+  border-color: #43cf5a !important;
+}
+
+.border-green-shadow {
+  border-color: var(--green);
+  box-shadow: 0 0 10px var(--green);
+}
+
+.card-feedback {
+  cursor: pointer;
+  transition: .6s ease-in;
+}
+
+.card-feedback img {
+  max-width: 300px;
+  height: 500px !important;
+}
+
+.card-feedback:not(.card-active) {
+  filter: blur(2px);
+  transform: scale(0.9);
+}
+
+.w-400 {
+  width: 400px;
+}
+
+.navbar-toggler:focus {
+  text-decoration: none;
+  outline: 0;
+  box-shadow: none !important;
+  filter: drop-shadow(0 0 4px rgba(255,255,255, 0.5));
+  transform: scale(1.1);
+}
+
+.w-md-50{
+  width: 50%;
+}
+
+@media screen and (max-width: 992px) {
+  .card-feedback img {
+    width: 300px !important;
+    height: 500px !important;
+  }
+
+  .w-md-50 {
+    width: 100% !important;
+  }
+}

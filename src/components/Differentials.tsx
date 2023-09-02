@@ -5,8 +5,8 @@ const Differentials = () => {
     return (
         <section className="position-relative ">
 
-            <div className="d-flex justify-content-between ">
-                <div className="d-flex justify-content-center mt-5 z-1 w-50">
+            <div className="d-flex justify-content-between flex-wrap">
+                <div className="d-flex justify-content-center mt-5 z-1 w-md-50">
                     <div className="d-flex flex-column align-items-start gap-4">
 
                         <h2 className="section-heading after-none display-4 text-start ff-poppins-medium d-block">Por que escolher <br />A Descart?</h2>
@@ -28,7 +28,7 @@ const Differentials = () => {
                     </div>
                 </div>
 
-                <div className="differentials-bg-whats w-50 d-flex align-items-center justify-content-center  flex-column">
+                <div className="differentials-bg-whats w-md-50 d-flex align-items-center justify-content-center  flex-column">
                     <Image style={{ maxWidth: 300 }} fill src="/images/logo-branca.svg" alt="Logo Branca A Descart" />
                     <CallWhatsApp />
                 </div>

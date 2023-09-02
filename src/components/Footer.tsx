@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const Footer = () => {
     return (
@@ -51,10 +52,15 @@ const Footer = () => {
             </div>
 
             <div className="bg-white p-3">
-                <p className="text-center mb-0 fs-10 ">
-                    Copyright © 2023 All rights reserved | Site desenvolvido por
-                    <a className="text-main-color" href="https://aenamartinelli.com.br">&nbsp;aenamartinelli.com.br</a>
-                </p>
+                <Link className="text-dark" href="https://aenamartinelli.com.br">
+                    <p className="text-center mb-0 fs-10 fw-bold">
+                        Copyright © 2023 All rights reserved | Site desenvolvido por
+                        &nbsp;
+                        <span className="text-main-color">
+                            aenamartinelli.com.br
+                        </span>
+                    </p>
+                </Link>
             </div>
         </footer>
     );

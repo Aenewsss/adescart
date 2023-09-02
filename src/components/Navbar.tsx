@@ -9,15 +9,17 @@ const Navbar = () => {
 
     const [backgroundColor, setBackgroundColor] = useState('transparent');
 
-    window.addEventListener('scroll', () => {
-        if (window.innerWidth > 767) {
-            if (window.scrollY > 0) {
-                setBackgroundColor('black')
-            } else {
-                setBackgroundColor('transparent')
+    if (typeof window !== 'undefined') {
+        window.addEventListener('scroll', () => {
+            if (window.innerWidth > 767) {
+                if (window.scrollY > 0) {
+                    setBackgroundColor('black')
+                } else {
+                    setBackgroundColor('transparent')
+                }
             }
-        }
-    })
+        })
+    }
 
     return (
         <nav id="sidebar" style={{ backgroundColor }} className="zIndex-1 navbar navbar-expand-lg position-fixed w-100 m-0 p-0">

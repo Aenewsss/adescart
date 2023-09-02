@@ -1,5 +1,6 @@
 'use client'
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const SearchField = () => {
@@ -36,7 +37,7 @@ const SearchField = () => {
     return (
         <>
             <input placeholder="Buscar produto" className="form-control bg-transparent text-white" type="search" name="search" onChange={searchProduct} />
-            <a className={productFound.name.length > 0 ? 'd-block text-white mt-2 bg-opacity ps-2 pe-2 pt-1 pb-1' : 'd-none'} href={`/inside/${productFound?.id}`}>{productFound?.name}</a>
+            <Link className={productFound.name.length > 0 ? 'd-block text-white mt-2 bg-opacity ps-2 pe-2 pt-1 pb-1' : 'd-none'} href={`/inside/${productFound?.id}`}>{productFound?.name}</Link>
         </>
     );
 }

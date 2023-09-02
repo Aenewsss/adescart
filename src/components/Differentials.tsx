@@ -3,7 +3,7 @@ import CallWhatsApp from "./Buttons/CallWhatsapp";
 
 const Differentials = () => {
     return (
-        <section className="position-relative ">
+        <section className="position-relative bg-main-color">
 
             <div className="d-flex justify-content-between flex-wrap">
                 <div className="d-flex justify-content-center mt-5 z-1 w-md-50">

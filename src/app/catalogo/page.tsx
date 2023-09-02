@@ -1,7 +1,13 @@
+import CatalogTop from "@components/components/CatalogTop";
+import CurrentPage from "@components/components/CurrentPage";
+import ProductsList from "@components/components/ProductsList";
+
 const CatalogPage = () => {
     return (
-        <main>
-            <h1>EM BREVE</h1>
+        <main >
+            <CatalogTop />
+            <CurrentPage />
+            <ProductsList />
         </main>
     );
 }

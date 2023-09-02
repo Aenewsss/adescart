@@ -4,7 +4,7 @@ import InstagramButton from "./Buttons/Instagram";
 
 const Feedbacks = () => {
     return (
-        <section className="pb-5">
+        <section className="pb-5 bg-main-color">
             <Image className="w-60 flip-vertical" fill src="/images/efeito-onda-linear.svg" alt="Divisão Onda" />
 
             <h2 className="section-heading display-4 text-center w-100">

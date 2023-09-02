@@ -26,9 +26,9 @@ const Navbar = () => {
                     <Image width={40} height={40} src="/icons/menu.svg" alt="Ícone Menu" />
                 </button>
 
-                <a className="navbar-brand navbar-brand w-50 d-flex justify-content-center text-white m-0" href="/">
+                <Link className="navbar-brand navbar-brand w-50 d-flex justify-content-center text-white m-0" href="/#">
                     <Image fill id="img-navbar" className="img-fluid" style={{ maxHeight: '90px', maxWidth: '200px' }} src="/images/logo-transparente.svg" alt="logo.svg" />
-                </a>
+                </Link>
 
                 <div className="collapse navbar-collapse mt-md-0 mt-3 pt-2" id="navbarNav">
                     <ul className="flex-wrap navbar-nav d-flex flex-row align-items-center justify-content-center gap-3">
@@ -38,10 +38,10 @@ const Navbar = () => {
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link text-white" target="_blank" href="https://api.whatsapp.com/send?phone=5561996851375&text=Olá, gostaria de saber mais sobre o Vinum!">Whatsapp</a>
+                            <Link className="nav-link text-white" target="_blank" href="https://api.whatsapp.com/send?phone=5561991761509&text=Olá, estou entrando em contato pelo site e gostaria de saber mais sobre A Descart!">Whatsapp</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link text-white" target="_blank" href="https://instagram.com/vinum_wineeventos?igshid=YmMyMTA2M2Y=">Instagram</a>
+                            <Link className="nav-link text-white" target="_blank" href="https://www.instagram.com/adescartdf/">Instagram</Link>
                         </li>
                         <li className="nav-item">
                             <SearchField />

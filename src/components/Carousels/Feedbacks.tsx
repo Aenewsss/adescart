@@ -27,7 +27,7 @@ const FeedbacksCarousel = () => {
         const currentCard = Object.values(feedbackCards).filter(el => el.children[0].id == elementId)[0]
 
         const centerDistance = screenCenter.current - currentCard.getBoundingClientRect().x
-        const elementWidth = screenCenter.current < 760 ? 102 : 153
+        const elementWidth = screenCenter.current < 760 ? 102 : screenCenter.current < 400 ? 134 : 153
         const centerPosition = centerDistance - elementWidth;
 
         const lastCardActive = document.querySelector(".card-active")!
@@ -42,15 +42,35 @@ const FeedbacksCarousel = () => {
         })
     }
 
+    function changePage(event: any) {
+
+        const cardActiveId = document.querySelector('.card-active')?.firstChild?.id
+        const currentIndex = feedbacks.current.findIndex(el => el.id == cardActiveId) + 1
+        const feedbacksLength = feedbacks.current.length
+
+        switch (event.target.id) {
+            case 'prev':
+                if (currentIndex == 1) feedbackClicked({ target: { id: `feedback${feedbacksLength - 1}` } })
+                else feedbackClicked({ target: { id: `feedback${currentIndex - 1}` } })
+                return
+            case 'next':
+                if (currentIndex + 1 > feedbacksLength - 1) feedbackClicked({ target: { id: `feedback1` } })
+                else feedbackClicked({ target: { id: `feedback${currentIndex + 1}` } })
+                return
+        }
+    }
+
     return (
-        <div className="feedback d-flex overflow-hidden gap-md-5 gap-2 justify-content-center mt-5">
+        <div className="feedback d-flex overflow-hidden gap-md-5 gap-2 justify-content-center mt-5 position-relative">
             {
                 feedbacks.current.map((feedback, index) => (
-                    <div key={feedback.id} onClick={e => feedbackClicked(e)} className={`${feedback.id == 'feedback3' ? 'card-active' : ''} 'position-relative card-feedback  border-green border-green-shadow rounded'`}>
+                    <div key={feedback.id} onClick={e => feedbackClicked(e)} className={`${feedback.id == 'feedback3' ? 'card-active' : ''} position-relative card-feedback  border-green border-green-shadow rounded`}>
                         <Image role="button" id={feedback.id} className="object-fit-cover rounded" src={feedback.url} fill alt={`Feedback ${index}`} />
                     </div>
                 ))
             }
+            <Image id="prev" onClick={changePage} role="button" className="arrow arrow-prev d-md-none position-absolute " width={60} height={60} src="/icons/arrow-left.svg" alt="Seta voltar"></Image>
+            <Image id="next" onClick={changePage} role="button" className="arrow arrow-next d-md-none position-absolute " width={60} height={60} src="/icons/arrow-right.svg" alt="Seta avançar"></Image>
         </div>
     );
 }

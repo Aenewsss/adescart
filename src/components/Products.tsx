@@ -21,7 +21,7 @@ const Products = () => {
                     </div>
                     <div className="col-xl-4 mt-xl-0 mt-4 mt- overflow-hidden position-relative d-flex justify-content-center">
                         <Link href={'/catalogo?category=toucas'}>
-                            <Image style={{ maxHeight: 600 }} className="img-fluid object-fit-cover scale-image" quality={100} fill src="/images/toucas.png" alt="Seção de toucas" />
+                            <Image style={{ maxHeight: 600 }} className="h-300-mobile img-fluid object-fit-cover scale-image" quality={100} fill src="/images/toucas.png" alt="Seção de toucas" />
                             <h2 className="fw-bold display-4 text-uppercase text-white position-absolute text-product text-center">
                                 TOUCAS
                             </h2>

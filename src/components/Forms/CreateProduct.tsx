@@ -3,6 +3,8 @@
 import { CategoryEnum } from "@components/enums/category.enum";
 import { uploadImageS3 } from "@components/functions/upload-image-s3";
 import { IProduct } from "@components/interfaces/product.interface";
+import { productService } from "@components/services/product.service";
+import Image from "next/image";
 import { FormEvent, useState } from "react";
 
 const CreateProductForm = () => {
@@ -22,7 +24,8 @@ const CreateProductForm = () => {
 
         product.imageUrl = await uploadImageS3(imageFile!)
 
-        console.log(product)
+        const result = await productService.createProduct(product)
+        alert('Created')
     }
 
     return (
@@ -34,7 +37,7 @@ const CreateProductForm = () => {
                 </div>
                 <div className="mb-3">
                     <label >Preço</label>
-                    <input onChange={e => setProduct({ ...product, price: e.target.value })} required className="form-control" type="number" />
+                    <input onChange={e => setProduct({ ...product, price: e.target.value })} required className="form-control" type="price" />
                 </div>
                 <div className="mb-3">
                     <label >Categoria</label>
@@ -51,6 +54,13 @@ const CreateProductForm = () => {
                     <label>Imagem</label>
                     <input onChange={(e: any) => setImageFile(e.target.files[0])} required className="form-control" type="file" accept="image/*" />
                 </div>
+                {imageFile &&
+                    <div className="mb-3 d-flex flex-column">
+                        <label>Imagem escolhida</label>
+                        <Image style={{ maxWidth: 300, maxHeight: 500 }} fill alt={imageFile.name} src={URL.createObjectURL(imageFile)} />
+
+                    </div>
+                }
             </div>
 
             <div className="mb-3">

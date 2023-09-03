@@ -3,7 +3,7 @@
 import { productService } from "@components/services/product.service";
 import { useEffect, useState } from "react";
 
-const SearchFieldChangeAdmin = ({ setCurrentProduct }: any) => {
+const SearchFieldChangeAdmin = ({ setCurrentProduct, oldImage }: any) => {
 
     const [products, setProducts] = useState<any[]>([]);
 
@@ -16,7 +16,9 @@ const SearchFieldChangeAdmin = ({ setCurrentProduct }: any) => {
     }
 
     async function getProductById(productId: string) {
-        setCurrentProduct(products.find(el => el._id == productId))
+        const currentProduct = products.find(el => el._id == productId) 
+        setCurrentProduct(currentProduct)
+        if(oldImage) oldImage.current = currentProduct.imageUrl
     }
 
     return (

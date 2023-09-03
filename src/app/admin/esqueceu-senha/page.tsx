@@ -1,22 +1,18 @@
 'use client'
 
-import { IResetPasswordLogin } from "@components/interfaces/reset-password-login.interface";
+import { IResetPasswordAdmin } from "@components/interfaces/reset-password.interface";
 import { userService } from "@components/services/user.service";
-import { useRouter } from "next/navigation";
 import { useState } from "react"
 
 const ForgotPassword = () => {
 
-    const { push } = useRouter()
-
-    const [resetPasswordInfo, setResetPasswordInfo] = useState<IResetPasswordLogin>({ email: '', newPassword: '', currentPassword: '' });
+    const [resetPasswordInfo, setResetPasswordInfo] = useState<IResetPasswordAdmin>({ email: '', newPassword: '', repeatPassword: '' });
 
     async function handleLogin(event: any) {
         event.preventDefault()
 
-        await userService.changePaswordLogin(resetPasswordInfo)
-
-        push('/login')
+        const result = await userService.changePaswordAdmin(resetPasswordInfo)
+        alert(result)
     }
 
     return (
@@ -31,12 +27,12 @@ const ForgotPassword = () => {
                 </div>
 
                 <div className="form-outline mb-4">
-                    <input onChange={(e) => setResetPasswordInfo({ ...resetPasswordInfo, currentPassword: e.target.value })} required type="password" id="form2Example28" className="form-control form-control-lg" />
-                    <label className="form-label" htmlFor="form2Example28">Senha atual</label>
+                    <input onChange={(e) => setResetPasswordInfo({ ...resetPasswordInfo, newPassword: e.target.value })} required type="password" id="form2Example28" className="form-control form-control-lg" />
+                    <label className="form-label" htmlFor="form2Example28">Nova atual</label>
                 </div>
                 <div className="form-outline mb-4">
-                    <input onChange={(e) => setResetPasswordInfo({ ...resetPasswordInfo, newPassword: e.target.value })} required type="password" id="form2Example28" className="form-control form-control-lg" />
-                    <label className="form-label" htmlFor="form2Example28">Nova Senha</label>
+                    <input onChange={(e) => setResetPasswordInfo({ ...resetPasswordInfo, repeatPassword: e.target.value })} required type="password" id="form2Example28" className="form-control form-control-lg" />
+                    <label className="form-label" htmlFor="form2Example28">Repetir Senha</label>
                 </div>
 
                 <div className="pt-1 mb-4">

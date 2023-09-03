@@ -33,7 +33,7 @@ const SidebarAdmin = () => {
                         <SearchFormAdmin />
 
 
-                        <Link className="nav-link fw-bold position-absolute bottom-0 mb-4 scale ps-2" href="/esqueceu-senha">Alterar Senha</Link>
+                        <Link className="nav-link fw-bold position-absolute bottom-0 mb-4 scale ps-2" href="/admin/esqueceu-senha">Alterar Senha</Link>
 
                     </div>
                 </div>

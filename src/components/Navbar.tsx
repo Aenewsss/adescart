@@ -27,7 +27,6 @@ const Navbar = () => {
         else setBackgroundColor('transparent')
     }, [path]);
 
-    if(path.includes('/admin')) return null
     
     return (
         <nav id="sidebar" style={{ backgroundColor }} className="pt-2 z-2 navbar navbar-expand-lg position-fixed w-100 m-0 p-0">

@@ -9,7 +9,7 @@ const LoginPage = () => {
                     <div className="col-sm-6 text-black d-flex align-items-center flex-column justify-content-center">
 
                         <div className="px-5 ms-xl-4">
-                            {/* <Image width={200} height={100} alt="Logo A Descart" src="/images/logo-transparente.svg" /> */}
+                            <Image width={200} height={100} alt="Logo A Descart" src="/images/logo-transparente.svg" />
                         </div>
 
                         <div className="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">

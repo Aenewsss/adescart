@@ -16,7 +16,9 @@ const LoginForm = () => {
 
         const result = await userService.login(loginInfo)
 
-        if (!result._id) alert(result)
+        console.log(result)
+        
+        if (!result.user._id) alert(result)
         else {
             push('/admin')
             localStorage.setItem('jwt-token', result.acessToken)

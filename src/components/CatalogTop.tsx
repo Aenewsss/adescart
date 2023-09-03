@@ -13,12 +13,12 @@ const CatalogTop = () => {
                     <div>
                         <SearchField />
                     </div>
-                    <Link href={{ pathname: '/catalogo', query: { category: "luvas" } }} className="text-white fw-light text-uppercase align-self-center">Luvas</Link>
-                    <Link href={{ pathname: '/catalogo', query: { category: "máscaras" } }} className="text-white fw-light text-uppercase align-self-center">Máscaras</Link>
-                    <Link href={{ pathname: '/catalogo', query: { category: "toucas" } }} className="text-white fw-light text-uppercase align-self-center">Toucas</Link>
-                    <Link href={{ pathname: '/catalogo', query: { category: "seringas" } }} className="text-white fw-light text-uppercase align-self-center">Seringas</Link>
-                    <Link href={{ pathname: '/catalogo', query: { category: "aventais" } }} className="text-white fw-light text-uppercase align-self-center">Avental</Link>
-                    <Link href={{ pathname: '/catalogo', query: { category: "outros" } }} className="text-white fw-light text-uppercase align-self-center">Outros</Link>
+                    <Link href={{ pathname: '/catalogo', query: { category: "glove" } }} className="text-white fw-light text-uppercase align-self-center">Luvas</Link>
+                    <Link href={{ pathname: '/catalogo', query: { category: "mask" } }} className="text-white fw-light text-uppercase align-self-center">Máscaras</Link>
+                    <Link href={{ pathname: '/catalogo', query: { category: "medicalCap" } }} className="text-white fw-light text-uppercase align-self-center">Toucas</Link>
+                    <Link href={{ pathname: '/catalogo', query: { category: "syringe" } }} className="text-white fw-light text-uppercase align-self-center">Seringas</Link>
+                    <Link href={{ pathname: '/catalogo', query: { category: "apron" } }} className="text-white fw-light text-uppercase align-self-center">Avental</Link>
+                    <Link href={{ pathname: '/catalogo', query: { category: "other" } }} className="text-white fw-light text-uppercase align-self-center">Outros</Link>
                 </div>
             </div>
         </section>

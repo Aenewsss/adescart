@@ -1,5 +1,6 @@
 'use client'
 
+import { formatCategoryText } from "@components/hooks/FormatCategoryText";
 import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -13,7 +14,7 @@ const CurrentPage = () => {
     const searchParams = useSearchParams()
 
     useEffect(() => {
-        setCurrentCategory(searchParams.get('category') || '')
+        setCurrentCategory(searchParams.get('category')!)
         setCurrentProduct(searchParams.get('product') || '')
     }, [pathname, searchParams])
 
@@ -25,7 +26,7 @@ const CurrentPage = () => {
                 <Link
                     className={`${!currentProduct ? 'text-secondary' : 'text-black'} fw-bold`}
                     href={{ pathname: '/catalogo', query: { category: currentCategory } }}>
-                    / {currentCategory}
+                    / {formatCategoryText(currentCategory)}
                 </Link>
             }
             {

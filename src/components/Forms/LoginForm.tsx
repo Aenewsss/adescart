@@ -1,15 +1,23 @@
 'use client'
 
+import { ILogin } from "@components/interfaces/login.interface";
+import { userService } from "@components/services/user.service";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 const LoginForm = () => {
 
-    const [loginInfo, setLoginInfo] = useState();
+    const { push } = useRouter()
 
-    async function handleLogin(event:any) {
+    const [loginInfo, setLoginInfo] = useState<ILogin>({ email: '', password: '' });
+
+    async function handleLogin(event: any) {
         event.preventDefault()
 
-        alert('login')
+        const result = await userService.login(loginInfo)
+
+        if(!result._id) alert(result)
+        else push('/admin')
     }
 
     return (
@@ -18,12 +26,12 @@ const LoginForm = () => {
             <h3 className="fw-normal mb-3 pb-3" >Entrar</h3>
 
             <div className="form-outline mb-4">
-                <input required type="email" id="form2Example18" className="form-control form-control-lg" />
+                <input onChange={(e) => setLoginInfo({ ...loginInfo, email: e.target.value })} required type="email" id="form2Example18" className="form-control form-control-lg" />
                 <label className="form-label" htmlFor="form2Example18">Email</label>
             </div>
 
             <div className="form-outline mb-4">
-                <input required type="password" id="form2Example28" className="form-control form-control-lg" />
+                <input onChange={(e) => setLoginInfo({ ...loginInfo, password: e.target.value })} required type="password" id="form2Example28" className="form-control form-control-lg" />
                 <label className="form-label" htmlFor="form2Example28">Senha</label>
             </div>
 

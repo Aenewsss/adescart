@@ -3,7 +3,7 @@
 import Link from "next/link";
 import SearchField from "./SearchField";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
 const Navbar = () => {
@@ -21,6 +21,13 @@ const Navbar = () => {
             }
         })
     }
+
+    useEffect(() => {
+        if (path == '/produto') setBackgroundColor('black')
+        else setBackgroundColor('transparent')
+    }, [path]);
+
+
 
     return (
         <nav id="sidebar" style={{ backgroundColor }} className="pt-2 z-2 navbar navbar-expand-lg position-fixed w-100 m-0 p-0">

@@ -32,9 +32,9 @@ export default function RootLayout({
       </head>
 
       <body className={`${poppinsThin.className} ${poppinsMedium.variable}`}>
-        {/* <Navbar /> */}
+        <Navbar />
         {children}
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   )

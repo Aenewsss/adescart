@@ -7,6 +7,11 @@ class ProductService {
         return response.data
     }
 
+    async getProductById(id: string) {
+        const response = await api.get(`product/${id}`)
+        return response.data
+    }
+
     async createProduct(product: IProduct) {
         const response = await api.post("/product", product)
         return response.data

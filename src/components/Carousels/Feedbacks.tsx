@@ -44,7 +44,8 @@ const FeedbacksCarousel = () => {
 
     function changePage(event: any) {
 
-        const cardActiveId = document.querySelector('.card-active')?.firstChild?.id
+        const cardActive = document.querySelector('.card-active')?.firstChild as HTMLElement
+        const cardActiveId = cardActive.id
         const currentIndex = feedbacks.current.findIndex(el => el.id == cardActiveId) + 1
         const feedbacksLength = feedbacks.current.length
 

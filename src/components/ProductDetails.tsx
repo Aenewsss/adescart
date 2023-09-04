@@ -28,7 +28,7 @@ const ProductDetails = () => {
         <section className="mt-5 mb-5 pb-5 container">
             <div className="row">
                 <div className="col-xl-6">
-                    <Image style={{maxWidth: 800, maxHeight: 600}} fill src={currentProduct?.imageUrl!} alt={currentProduct?.name!} />
+                    <Image loading="lazy" style={{maxWidth: 800, maxHeight: 600}} fill src={currentProduct?.imageUrl!} alt={currentProduct?.name!} />
                 </div>
 
                 <div className="col-xl-6 ">

@@ -66,12 +66,12 @@ const FeedbacksCarousel = () => {
             {
                 feedbacks.current.map((feedback, index) => (
                     <div key={feedback.id} onClick={e => feedbackClicked(e)} className={`${feedback.id == 'feedback3' ? 'card-active' : ''} position-relative card-feedback  border-green border-green-shadow rounded`}>
-                        <Image role="button" id={feedback.id} className="object-fit-cover rounded" src={feedback.url} fill alt={`Feedback ${index}`} />
+                        <Image loading="lazy" role="button" id={feedback.id} className="object-fit-cover rounded" src={feedback.url} fill alt={`Feedback ${index}`} />
                     </div>
                 ))
             }
-            <Image id="prev" onClick={changePage} role="button" className="arrow arrow-prev d-md-none position-absolute " width={60} height={60} src="/icons/arrow-left.svg" alt="Seta voltar"></Image>
-            <Image id="next" onClick={changePage} role="button" className="arrow arrow-next d-md-none position-absolute " width={60} height={60} src="/icons/arrow-right.svg" alt="Seta avançar"></Image>
+            <Image loading="lazy" id="prev" onClick={changePage} role="button" className="arrow arrow-prev d-md-none position-absolute " width={60} height={60} src="/icons/arrow-left.svg" alt="Seta voltar"></Image>
+            <Image loading="lazy" id="next" onClick={changePage} role="button" className="arrow arrow-next d-md-none position-absolute " width={60} height={60} src="/icons/arrow-right.svg" alt="Seta avançar"></Image>
         </div>
     );
 }

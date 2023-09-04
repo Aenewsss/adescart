@@ -59,7 +59,7 @@ const RemoveProductForm = () => {
             <div className="d-flex gap-5">
                 <div style={{ maxWidth: 300, maxHeight: 500 }} className="mb-3">
                     <label>Imagem Atual</label>
-                    <Image fill alt={product.name} src={product.imageUrl} />
+                    <Image loading="lazy" fill alt={product.name} src={product.imageUrl} />
                 </div>
                 <div className="mb-3">
                     <label >Descrição</label>

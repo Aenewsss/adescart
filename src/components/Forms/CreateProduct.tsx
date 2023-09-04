@@ -57,7 +57,7 @@ const CreateProductForm = () => {
                 {imageFile &&
                     <div className="mb-3 d-flex flex-column">
                         <label>Imagem escolhida</label>
-                        <Image style={{ maxWidth: 300, maxHeight: 500 }} fill alt={imageFile.name} src={URL.createObjectURL(imageFile)} />
+                        <Image loading="lazy" style={{ maxWidth: 300, maxHeight: 500 }} fill alt={imageFile.name} src={URL.createObjectURL(imageFile)} />
 
                     </div>
                 }

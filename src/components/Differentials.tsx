@@ -13,15 +13,15 @@ const Differentials = () => {
 
                         <div className="d-flex flex-column gap-3">
                             <div className="d-flex align-items-center gap-3 bg-linear-differentials">
-                                <Image quality={100} width={40} height={40} src="/icons/chat.svg" alt="Ícone chat" />
+                                <Image loading="lazy" quality={100} width={40} height={40} src="/icons/chat.svg" alt="Ícone chat" />
                                 <p className="text-white mb-0 fs-5">Atendimento rápido e de qualidade</p>
                             </div>
                             <div className="d-flex align-items-center gap-3 bg-linear-differentials">
-                                <Image quality={100} width={40} height={40} src="/icons/coins.svg" alt="Ícone moeda" />
+                                <Image loading="lazy" quality={100} width={40} height={40} src="/icons/coins.svg" alt="Ícone moeda" />
                                 <p className="text-white mb-0 fs-5"> Variedade de produtos com preço justo</p>
                             </div>
                             <div className="d-flex align-items-center gap-3 bg-linear-differentials">
-                                <Image quality={100} width={40} height={40} src="/icons/heart.svg" alt="Ícone coração" />
+                                <Image loading="lazy" quality={100} width={40} height={40} src="/icons/heart.svg" alt="Ícone coração" />
                                 <p className="text-white mb-0 fs-5"> Inúmeros clientes satisfeitos</p>
                             </div>
                         </div>
@@ -29,11 +29,11 @@ const Differentials = () => {
                 </div>
 
                 <div className="differentials-bg-whats w-md-50 d-flex align-items-center justify-content-center  flex-column">
-                    <Image style={{ maxWidth: 300 }} fill src="/images/logo-branca.svg" alt="Logo Branca A Descart" />
+                    <Image loading="lazy" style={{ maxWidth: 300 }} fill src="/images/logo-branca.svg" alt="Logo Branca A Descart" />
                     <CallWhatsApp />
                 </div>
             </div>
-            <Image className="position-absolute bottom-0 z-0 w-60" fill src="/images/efeito-onda-linear.svg" alt="Efeito Onda Linear" />
+            <Image loading="lazy" className="position-absolute bottom-0 z-0 w-60" fill src="/images/efeito-onda-linear.svg" alt="Efeito Onda Linear" />
 
         </section>
     );

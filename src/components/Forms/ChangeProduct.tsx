@@ -81,7 +81,7 @@ const ChangeProductForm = () => {
                 </div>
                 <div style={{ maxWidth: 300, maxHeight: 500 }} className="mb-3">
                     <label>Imagem Atual</label>
-                    <Image fill alt={product.name} src={product.imageUrl} />
+                    <Image loading="lazy" fill alt={product.name} src={product.imageUrl} />
                 </div>
             </div>
 

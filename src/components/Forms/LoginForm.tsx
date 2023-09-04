@@ -4,6 +4,7 @@ import { ILogin } from "@components/interfaces/login.interface";
 import { userService } from "@components/services/user.service";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { toast } from "react-toastify"
 
 const LoginForm = () => {
 
@@ -16,9 +17,7 @@ const LoginForm = () => {
 
         const result = await userService.login(loginInfo)
 
-        console.log(result)
-        
-        if (!result.user._id) alert(result)
+        if (!result.user) toast.error('Usuário ou senha inválida')
         else {
             push('/admin')
             localStorage.setItem('jwt-token', result.acessToken)

@@ -7,6 +7,7 @@ import SearchFieldChangeAdmin from "../SearchFieldChangeAdmin";
 import Image from "next/image";
 import { removeImageS3 } from "@components/functions/remove-image-s3";
 import { useRouter } from "next/navigation";
+import { toast } from "react-toastify"
 
 const RemoveProductForm = () => {
 
@@ -26,7 +27,8 @@ const RemoveProductForm = () => {
         console.log(await removeImageS3(product.imageUrl))
 
         const result = await productService.removeProduct(product._id!)
-        alert('Removido')
+        if(result) toast.success('Produto removido com sucesso')
+        else toast.error('Erro ao remover produto')
         push('/admin/remover-produto')
     }
 

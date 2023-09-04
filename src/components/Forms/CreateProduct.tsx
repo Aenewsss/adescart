@@ -6,6 +6,7 @@ import { IProduct } from "@components/interfaces/product.interface";
 import { productService } from "@components/services/product.service";
 import Image from "next/image";
 import { FormEvent, useState } from "react";
+import { toast } from "react-toastify"
 
 const CreateProductForm = () => {
 
@@ -25,7 +26,8 @@ const CreateProductForm = () => {
         product.imageUrl = await uploadImageS3(imageFile!)
 
         const result = await productService.createProduct(product)
-        alert('Created')
+        if(result) toast.success('Produto criado com sucesso')
+        else toast.error('Erro ao criar produto')
     }
 
     return (

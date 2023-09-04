@@ -3,6 +3,7 @@
 import { IResetPasswordAdmin } from "@components/interfaces/reset-password.interface";
 import { userService } from "@components/services/user.service";
 import { useState } from "react"
+import { toast } from "react-toastify"
 
 const ForgotPassword = () => {
 
@@ -12,7 +13,8 @@ const ForgotPassword = () => {
         event.preventDefault()
 
         const result = await userService.changePaswordAdmin(resetPasswordInfo)
-        alert(result)
+        if(result) toast.success('Senha alterada com sucesso')
+        else toast.error('Erro ao atualizar senha')
     }
 
     return (

@@ -1,9 +1,8 @@
-import Navbar from "@components/components/Navbar"
 import './globals.css'
+import 'react-toastify/dist/ReactToastify.css';
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
-import Footer from "@components/components/Footer"
-
+import { ToastContainer } from "react-toastify"
 const poppinsThin = Poppins({ subsets: ['latin'], weight: '200' })
 const poppinsMedium = Poppins({ subsets: ['latin'], weight: '300', variable: '--font-poppins-medium' })
 
@@ -33,6 +32,18 @@ export default function RootLayout({
 
       <body className={`${poppinsThin.className} ${poppinsMedium.variable}`}>
         {children}
+        <ToastContainer
+          position="top-left"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
       </body>
     </html>
   )

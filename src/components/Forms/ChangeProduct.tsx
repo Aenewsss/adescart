@@ -8,6 +8,7 @@ import SearchFieldChangeAdmin from "../SearchFieldChangeAdmin";
 import Image from "next/image";
 import { productService } from "@components/services/product.service";
 import { removeImageS3 } from "@components/functions/remove-image-s3";
+import { toast } from "react-toastify"
 
 const ChangeProductForm = ({ productDetails }: any) => {
 
@@ -34,7 +35,8 @@ const ChangeProductForm = ({ productDetails }: any) => {
         }
 
         const result = await productService.updateProduct(product)
-        alert('Atualizado')
+        if(result) toast.success('Produto alterado com sucesso')
+        else toast.error('Erro ao atualizar produto')
     }
 
     useEffect(() => {

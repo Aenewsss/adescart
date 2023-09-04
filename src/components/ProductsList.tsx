@@ -24,7 +24,7 @@ const ProductsList = () => {
         else setProducts(result.filter((el: IProduct) => el.category == productCategory))
     }
 
-    if(products.length == 0) return <h1 className="text-black container mb-5 fw-bold mt-5">Nenhum produto nesta categoria</h1>
+    if(products.length == 0) return <h1 className="text-black container mb-5 fw-bold mt-5">Nenhum produto encontrado nesta categoria</h1>
 
     return (
         <section className="mb-5 pb-5 container">

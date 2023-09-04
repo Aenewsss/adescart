@@ -9,7 +9,7 @@ import Image from "next/image";
 import { productService } from "@components/services/product.service";
 import { removeImageS3 } from "@components/functions/remove-image-s3";
 
-const ChangeProductForm = () => {
+const ChangeProductForm = ({ productDetails }: any) => {
 
     const oldImage = useRef('')
 
@@ -37,11 +37,18 @@ const ChangeProductForm = () => {
         alert('Atualizado')
     }
 
+    useEffect(() => {
+        if (productDetails) setProduct(productDetails)
+    }, [productDetails]);
+
     return (
         <form onSubmit={handleSubmit}>
-            <div className="mb-3">
-                <SearchFieldChangeAdmin setCurrentProduct={setProduct} oldImage={oldImage}/>
-            </div>
+            {
+                !productDetails &&
+                <div className="mb-3">
+                    <SearchFieldChangeAdmin setCurrentProduct={setProduct} oldImage={oldImage} />
+                </div>
+            }
             <div className="d-flex gap-5 flex-wrap">
                 <div className="mb-3">
                     <label >Nome</label>

@@ -15,20 +15,20 @@ const ProductDetails = () => {
 
     useEffect(() => {
         getCurrentProduct()
-    }, []);
+    }, [, searchParams]);
 
     async function getCurrentProduct() {
         const result = await productService.getProductById(searchParams.get('id')!)
-        if(result._id) setCurrentProduct(result)
+        if (result._id) setCurrentProduct(result)
     }
 
-    if(!currentProduct?._id) return <h1 className="mt-5 pt-5">Produto não existe</h1>
+    if (!currentProduct?._id) return <h1 className="mt-5 pt-5">Produto não existe</h1>
 
     return (
         <section className="mt-5 mb-5 pb-5 container">
             <div className="row">
                 <div className="col-md-6">
-                    <Image loading="lazy" style={{maxWidth: 800, maxHeight: 600}} fill src={currentProduct?.imageUrl!} alt={currentProduct?.name!} />
+                    <Image loading="lazy" style={{ maxWidth: 800, maxHeight: 600 }} fill src={currentProduct?.imageUrl!} alt={currentProduct?.name!} />
                 </div>
 
                 <div className="col-md-6 mt-md-0 mt-3">

@@ -27,7 +27,7 @@ const ProductsList = () => {
     if(products.length == 0) return <h1 className="text-black container mb-5 fw-bold mt-5">Nenhum produto nesta categoria</h1>
 
     return (
-        <section className="mb-5 pb-5">
+        <section className="mb-5 pb-5 container">
             <div className="row">
                 {
                     products.map((product: IProduct) => (

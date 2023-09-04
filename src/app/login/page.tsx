@@ -6,7 +6,7 @@ const LoginPage = () => {
         <section className="vh-100">
             <div className="container-fluid">
                 <div className="row">
-                    <div className="col-sm-6 text-black d-flex align-items-center flex-column justify-content-center">
+                    <div className="col-sm-6 mt-md-0 mt-5 text-black d-flex align-items-center flex-column justify-content-center">
 
                         <div className="px-5 ms-xl-4">
                             <Image loading="lazy" width={200} height={100} alt="Logo A Descart" src="/images/logo-transparente.svg" />

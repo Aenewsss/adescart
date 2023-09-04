@@ -93,6 +93,7 @@ a {
 
 .products-bg {
   background: center / cover no-repeat url("/images/background-produtos.png");
+  background-color: var(--main-color);
 }
 
 .section-heading {
@@ -178,6 +179,10 @@ a {
 .mt-m5 {
   margin-top: -10vh;
 }
+
+.h-300{height: 300px !important;}
+
+.mw-300{max-width: 300px;}
 
 .differentials-bg-whats {
   min-height: 440px;
@@ -265,10 +270,6 @@ a {
 
   .fs-4 span {
     font-size: 18px !important;
-  }
-
-  .h-300-mobile {
-    height: 300px !important;
   }
 
   .feedback.overflow-hidden {

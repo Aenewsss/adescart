@@ -27,17 +27,17 @@ const ProductDetails = () => {
     return (
         <section className="mt-5 mb-5 pb-5 container">
             <div className="row">
-                <div className="col-xl-6">
+                <div className="col-md-6">
                     <Image loading="lazy" style={{maxWidth: 800, maxHeight: 600}} fill src={currentProduct?.imageUrl!} alt={currentProduct?.name!} />
                 </div>
 
-                <div className="col-xl-6 ">
+                <div className="col-md-6 mt-md-0 mt-3">
                     <div className="d-flex gap-3">
-                        <h4 className="fw-bold text-black">{currentProduct.name}</h4>
+                        <h4 className="fw-bold text-black text-capitalize">{currentProduct.name}</h4>
                         <h5 className="fw-bold text-black align-self-center">R$ {currentProduct.price}</h5>
                     </div>
 
-                    <p>{currentProduct.description || "Produto não possui descrição"}</p>
+                    <p>{currentProduct.description || "* Produto não possui descrição"}</p>
 
                     <BuyWhatsapp />
                 </div>

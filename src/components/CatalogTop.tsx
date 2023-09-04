@@ -9,7 +9,7 @@ const CatalogTop = () => {
                 <h1 className="text-white fw-light text-center fst-italic display-4">Conheça nossos produtos</h1>
             </div>
             <div className="bg-main-color w-100 p-2">
-                <div className="container d-flex flex-wrap justify-content-sm-between  text-white gap-5 fs-5">
+                <div className="container d-flex flex-wrap justify-content-md-between  justify-content-center text-white gap-5 fs-5">
                     <div>
                         <SearchField />
                     </div>

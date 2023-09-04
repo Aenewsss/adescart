@@ -19,7 +19,7 @@ const CurrentPage = () => {
     }, [pathname, searchParams])
 
     return (
-        <div className="container fs-5 d-flex gap-2 text-uppercase mt-4 mb-4">
+        <div className="container fs-5 d-flex gap-2 text-uppercase mt-4 mb-4 flex-wrap">
             <Link className="text-black fw-bold" href="/">HOME / </Link>
             <Link className={`${currentCategory ? 'text-black' : 'text-secondary'} fw-bold`} href="/catalogo">PRODUTOS</Link>
             {currentCategory &&

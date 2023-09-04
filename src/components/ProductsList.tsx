@@ -31,7 +31,7 @@ const ProductsList = () => {
             <div className="row">
                 {
                     products.map((product: IProduct) => (
-                        <div key={product._id} className="col-xl-4">
+                        <div key={product._id} className="col-md-4 mt-5">
                             <Product product={product} />
                         </div>
                     ))

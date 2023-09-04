@@ -63,8 +63,8 @@ const ChangeProductForm = () => {
                     </select>
                 </div>
             </div>
-            <div className="d-flex gap-5">
-                <div>
+            <div className="row">
+                <div className="col-md-6 d-flex flex-md-column flex-column-reverse">
                     <div className="mb-3">
                         <label>Trocar Imagem</label>
                         <input
@@ -79,7 +79,7 @@ const ChangeProductForm = () => {
                     </div>
 
                 </div>
-                <div style={{ maxWidth: 300, maxHeight: 500 }} className="mb-3">
+                <div style={{ maxWidth: 300, maxHeight: 500 }} className="mb-3 col-md-6 mt-md-0 mt-4">
                     <label>Imagem Atual</label>
                     <Image loading="lazy" fill alt={product.name} src={product.imageUrl} />
                 </div>

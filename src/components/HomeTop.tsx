@@ -4,7 +4,7 @@ const HomeTop = () => {
     return (
         <section>
             <div className="home-top d-flex align-items-center justify-content-center">
-                <h1 className="text-white fw-light text-center fst-italic">
+                <h1 className="display-3 text-white fw-light text-center fst-italic">
                     Pensando em você, oferecemos o melhor <br className="d-md-block d-none" />
                     atendimento com o melhor preço.</h1>
             </div>

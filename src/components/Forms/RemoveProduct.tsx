@@ -8,11 +8,12 @@ import Image from "next/image";
 import { removeImageS3 } from "@components/functions/remove-image-s3";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify"
+import Spinner from "../Spinner";
 
 const RemoveProductForm = () => {
 
     const { push } = useRouter()
-
+    const [spinner, setSpinner] = useState<boolean>(false)
     const [product, setProduct] = useState<IProduct>(
         {
             _id: '',
@@ -22,18 +23,29 @@ const RemoveProductForm = () => {
         }
     );
     async function handleSubmit(event: FormEvent) {
+        setSpinner(true)
         event.preventDefault();
 
         console.log(await removeImageS3(product.imageUrl))
 
-        const result = await productService.removeProduct(product._id!)
-        if(result) toast.success('Produto removido com sucesso')
+        const result = await productService.removeProduct(product._id!).catch(e => toast.error('Erro ao remover produto, tente logar novamente'))
+        if (result) {
+            toast.success('Produto removido com sucesso')
+            setProduct({
+                name: '', price: '', description: '',
+                imageUrl: '',
+                category: CategoryEnum.glove
+            })
+        }
         else toast.error('Erro ao remover produto')
         push('/admin/remover-produto')
+        setSpinner(false)
     }
 
     return (
         <form onSubmit={handleSubmit}>
+            <Spinner visible={spinner} />
+
             <div className="mb-3">
                 <SearchFieldChangeAdmin setCurrentProduct={setProduct} />
             </div>

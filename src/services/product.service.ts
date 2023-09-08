@@ -1,6 +1,7 @@
 import { api } from "@components/api"
 import { IProduct } from "@components/interfaces/product.interface"
 import { authorizationHeader } from "../functions/authorization-header"
+import { toast } from "react-toastify"
 class ProductService {
     async getAllProducts() {
         const response = await api.get("/product")

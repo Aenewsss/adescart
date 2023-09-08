@@ -7,9 +7,11 @@ import { productService } from "@components/services/product.service";
 import Image from "next/image";
 import { FormEvent, useState } from "react";
 import { toast } from "react-toastify"
+import Spinner from "../Spinner";
 
 const CreateProductForm = () => {
 
+    const [spinner, setSpinner] = useState<boolean>(false)
     const [product, setProduct] = useState<IProduct>(
         {
             name: '', price: '', description: '',
@@ -21,17 +23,27 @@ const CreateProductForm = () => {
     const [imageFile, setImageFile] = useState<File>();
 
     async function handleSubmit(event: FormEvent) {
+        setSpinner(true)
         event.preventDefault();
 
         product.imageUrl = await uploadImageS3(imageFile!)
 
-        const result = await productService.createProduct(product)
-        if(result) toast.success('Produto criado com sucesso')
+        const result = await productService.createProduct(product).catch(e => toast.error('Erro ao criar produto, tente logar novamente'))
+        if (result) {
+            toast.success('Produto criado com sucesso')
+            setProduct({
+                name: '', price: '', description: '',
+                imageUrl: '',
+                category: CategoryEnum.glove
+            })
+        }
         else toast.error('Erro ao criar produto')
+        setSpinner(false)
     }
 
     return (
         <form onSubmit={handleSubmit}>
+            <Spinner visible={spinner} />
             <div className="d-flex gap-5 flex-wrap">
                 <div className="mb-3">
                     <label >Nome</label>

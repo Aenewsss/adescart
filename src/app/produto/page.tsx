@@ -2,6 +2,7 @@ import CurrentPage from "@components/components/CurrentPage";
 import Footer from "@components/components/Footer";
 import Navbar from "@components/components/Navbar";
 import ProductDetails from "@components/components/ProductDetails";
+import WhatsAppFixed from "@components/components/WhatsappFixed";
 
 const ProductPage = () => {
     return (
@@ -12,6 +13,8 @@ const ProductPage = () => {
                 <ProductDetails />
             </main>
             <Footer />
+            <WhatsAppFixed />
+
         </>
     );
 }

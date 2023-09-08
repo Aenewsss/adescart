@@ -14,7 +14,7 @@ const ForgotPassword = () => {
 
         const result = await userService.changePaswordAdmin(resetPasswordInfo)
         if(result) toast.success('Senha alterada com sucesso')
-        else toast.error('Erro ao atualizar senha')
+        else toast.error('Erro ao atualizar senha, entre em contato com o administrador do sistema')
     }
 
     return (

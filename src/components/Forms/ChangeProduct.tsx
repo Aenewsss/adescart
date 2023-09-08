@@ -9,11 +9,12 @@ import Image from "next/image";
 import { productService } from "@components/services/product.service";
 import { removeImageS3 } from "@components/functions/remove-image-s3";
 import { toast } from "react-toastify"
+import Spinner from "../Spinner";
 
 const ChangeProductForm = ({ productDetails }: any) => {
 
     const oldImage = useRef('')
-
+    const [spinner, setSpinner] = useState<boolean>(false)
     const [product, setProduct] = useState<IProduct>(
         {
             _id: '',
@@ -26,6 +27,7 @@ const ChangeProductForm = ({ productDetails }: any) => {
     const [imageFile, setImageFile] = useState<File>();
 
     async function handleSubmit(event: FormEvent) {
+        setSpinner(true)
         event.preventDefault();
 
         if (imageFile) {
@@ -34,9 +36,17 @@ const ChangeProductForm = ({ productDetails }: any) => {
             product.imageUrl = await uploadImageS3(imageFile!)
         }
 
-        const result = await productService.updateProduct(product)
-        if(result) toast.success('Produto alterado com sucesso')
+        const result = await productService.updateProduct(product).catch(e => toast.error('Erro ao atualizar produto, tente logar novamente'))
+        if (result) {
+            toast.success('Produto alterado com sucesso')
+            setProduct({
+                name: '', price: '', description: '',
+                imageUrl: '',
+                category: CategoryEnum.glove
+            })
+        }
         else toast.error('Erro ao atualizar produto')
+        setSpinner(false)
     }
 
     useEffect(() => {
@@ -45,6 +55,8 @@ const ChangeProductForm = ({ productDetails }: any) => {
 
     return (
         <form onSubmit={handleSubmit}>
+            <Spinner visible={spinner} />
+
             {
                 !productDetails &&
                 <div className="mb-3">

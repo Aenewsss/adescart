@@ -82,6 +82,7 @@ a {
   background: center / cover no-repeat url("/images/banner-home1.png");
   height: 92vh;
 }
+
 .catalog-top {
   background: center / cover no-repeat url("/images/banner-produtos.png");
   height: 50vh;
@@ -180,9 +181,13 @@ a {
   margin-top: -10vh;
 }
 
-.h-300{height: 300px !important;}
+.h-300 {
+  height: 300px !important;
+}
 
-.mw-300{max-width: 300px;}
+.mw-300 {
+  max-width: 300px;
+}
 
 .differentials-bg-whats {
   min-height: 440px;
@@ -243,7 +248,7 @@ a {
   top: 50% !important;
   transform: translateY(-50%);
   transition: .5s ease;
-  filter: drop-shadow(0 0 4px rgb(255,255,255));
+  filter: drop-shadow(0 0 4px rgb(255, 255, 255));
 }
 
 .arrow:hover {
@@ -286,7 +291,7 @@ a {
   background-color: rgba(0, 0, 0, 0.25);
 }
 
-.left-0{
+.left-0 {
   left: 0 !important;
 }
 
@@ -294,5 +299,30 @@ a {
   position: absolute;
   left: 50%;
   bottom: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
+}
+
+.whats-fixed {
+  bottom: 20px;
+  right: 20px;
+  width: clamp(50px, 4vw, 100px);
+  animation: whatsFloating 4s linear infinite;
+}
+
+@keyframes whatsFloating {
+  0% {
+    scale: 1;
+    transform: translateY(0);
+  }
+
+  50% {
+    scale: 1.1;
+    transform: translateY(-5px);
+    filter: drop-shadow(0 0 4px rgb(13, 248, 33));
+  }
+
+  100%{
+    scale: 1;
+    transform: translateY(0);
+  }
 }

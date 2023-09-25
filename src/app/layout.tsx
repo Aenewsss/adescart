@@ -31,11 +31,10 @@ export default function RootLayout({
         <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11316323810">
         </script>
         <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){window.dataLayer.push(arguments)}
-          gtag('js', new Date());
-
-          gtag('config', 'AW-11316323810');
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){window.dataLayer.push(arguments)}
+            gtag('js', new Date());
+            gtag('config', 'AW-11316323810');
         </script>
       </head>
 
